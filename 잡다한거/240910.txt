@@ -1,0 +1,37 @@
+------------------------------------------------------------------------
+의존성 주입 후 우리 프로그램에서 제공되는 서비스 중 비밀번호를 [		] 처리하고자할 때
+BcryptPassWordEncoder 클래스를 빈으로 등록 후 Controller 에서 사용하고자 할 때 
+아래 내용으로 실행하면 문제가 발생한다. 잘못된 부분을 고쳐보자.
+------------------------------------------------------------------------
+package com.kh.spring.member.controller;
+// import 문 생략..
+
+@Controller
+public class MemberController {
+
+	private final MemberService mService;
+	private final BCryptPasswordEncoder bcryptPasswordEncoder;
+
+	public MemberController(MemberService mService, BCryptPasswordEncoder bcryptPasswordEncoder) {
+		this.mService = mService;
+		this.bcryptPasswordEncoder = bcryptPasswordEncoder;
+	}
+
+  // login.me 요청을 받는 메소드
+	@RequestMapping("/login.me")
+	public void loginMember(Member m, HttpSession session) {
+		Member loginUser = mService.loginMember(m);
+
+		if(loginUser != null 
+		&& bcryptPasswordEncoder.matches(m.getUserPwd(), loginUser.getUserPwd())) {
+			
+			session.setAttribute("loginUser", loginUser)
+
+			return "success";		
+
+		} else {
+			return "failed";
+		}
+	}
+}
+------------------------------------------------------------------------

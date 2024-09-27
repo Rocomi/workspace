@@ -1,0 +1,4 @@
+제어판
+네트워크 설정
+windows Defender 방화벽 설정 또는 해제
+공용네트워크 windows defender 방화벽 사용 안함 하면 접근 가능

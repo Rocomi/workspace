@@ -1,0 +1,37 @@
+운동 데이터를 저장하기 위한 Exercise 객체가 있고,
+이 데이터를 DB에 저장하기 위한 ExerciseDao 객체가 있다고 할 때
+아래는 ExerciseDao 객체를 정의한 코드이다. 
+
+이상한 부분을 수정하시오.
+-----------------------------------------
+@Repository
+public class ExerciseDao {
+	
+	public int insert(Exercise exercise) {
+	  // DB관련 작업
+	}
+
+}
+-----------------------------------------
+
+비즈니스 로직을 처리하기 위한 ExerciseService 객체가 있다고 할 때
+
+아래 코드에서 주석처리한 부분에 대하여 작성하시오.
+-----------------------------------------
+// 서비스 빈으로 등록하기 위한 어노테이션 추가
+public class ExerciseService {
+	// ExerciseDao 객체 의존성 주입 - 생성자 주입 방식 사용
+
+	private final ExerciseDao eDao;
+
+	public Exercise(ServiceDao eDao) {
+		this.eDao = eDao;
+	}
+
+
+
+	@Autowired
+	private ExerciseDao eDao
+
+}
+-----------------------------------------
