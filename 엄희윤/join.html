@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        /* 전체영역 설정*/
+        .wrap {
+            background-color: rgb(202, 228, 252);
+            box-sizing: border-box;
+            width: 100%;
+            height: 600px;
+            border: 2px solid rgb(44, 153, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 50px;
+            font-weight: 900;
+
+        }
+        /* 입력부분 설정 */
+        input {
+            background-color: gainsboro;
+            border: none;
+            border-bottom: 2px dashed;
+            width: 250px;
+            margin-top: 15px;
+            float: right;
+        }
+        
+        input[name=email]{
+            width: 123px;
+        }
+
+        .join {
+            width: 380px;
+            height: 400px;
+            background-color: gainsboro;
+            border: 2px solid lightgray;
+            padding: 20px;
+        }
+        #userId {
+            padding-top: 30px ;
+        }
+
+        #tip {
+            font-size: x-small;
+            color: rgb(102, 102, 102);
+            line-height: 10px;
+            text-align: right;
+            padding-right: 50px;
+            visibility: hidden;
+        }
+        div[id^=warnning] {
+            font-size: small;
+            color: red;
+            line-height: 0px;
+            text-align: right;
+            visibility: hidden;
+        }
+        /* 가입버튼 설정 */
+        button {
+            background-color: rgba(14, 255, 6, 0.315);
+            border: none;
+            width: 380px;
+            height: 50px;
+            font-weight: 900;
+            font-size: large;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset class="wrap">
+            <div class="join">
+                <div id="userId">
+                    아이디
+                    <input id="id" name="userId" type="text">
+                    <div id="warnningId">
+                        필수입력 항목입니다.
+                    </div>
+                </div>
+                <div id="userPw">
+                    패스워드
+                    <input id="pass" name="userPw" type="password">
+                </div>
+                <div id="warnningPw">
+                    필수입력 항목입니다.
+                </div>
+                <div id="tip">
+                    영문자 대/소문자 특수문자, 숫자 포합 8~32자
+                </div>
+                <div id="userPwCheck">
+                    패스워드 확인
+                    <input id="passc" name="userPwCheck" type="password">
+                </div>
+                <div id="warnningPwc">
+                    필수입력 항목입니다.
+                </div>
+                <div id="email">
+                    이메일
+                    <input name="email" type="text" value="@">
+                    
+                    <input name="email" type="text">
+                </div>
+                <div id="address">
+                    주소
+                    <input name="address1"type="text"><br>
+                    <input name="address2" type="text">
+                </div>
+                <button type="submit">가 입</button>
+            </div>
+        </fieldset>
+    </form>
+</body>
+<script>
+    
+    
+    $(function() {
+        
+        /* 패스워드 입력 요소를 클릭한 경우 tip창 출력 */
+        $("input[name=userPw]").focus(function() {
+            $("#tip").css('visibility', 'visible');
+        }).focusout(function() {
+            $("#tip").css('visibility', 'hidden');
+        });
+
+        /* 아이디, 패스워드, 패스워드 확인을 입력하지 않고 다음 입력 요소로 이동하는 경우 
+            필수 입력 항목입니다 라는 메시지가 입력 요소 하단에 나오게 함 */
+
+        
+        
+        $("input[name=userId]").focusout(function() {
+            if(document.getElementById("id").value == ''){
+                $("#warnningId").css('visibility', 'visible');
+            } else {
+                $("#warnningId").css('visibility', 'hidden');
+            };
+        });
+
+        $("input[name=userPw]").focusout(function() {
+            if(document.getElementById("pass").value == ''){
+                $("#warnningPw").css('visibility', 'visible');
+            } else {
+                $("#warnningPw").css('visibility', 'hidden');
+            };
+        });
+
+        $("input[name=userPwCheck]").focusout(function() {
+            if(document.getElementById("passc").value == ''){
+                $("#warnningPwc").css('visibility', 'visible');
+            } else {
+                $("#warnningPwc").css('visibility', 'hidden');
+            };
+        });
+    });
+</script>
+</html>

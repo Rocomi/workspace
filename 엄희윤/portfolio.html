@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 문제</title>
+
+    <style>
+        /*************************폼태그*****************/
+        fieldset{
+            display: flex;
+            box-sizing: border-box;
+            height: 300px;
+        }
+        .title{
+            width: 70px;
+            text-align: center;
+            font-weight: 900;
+        }
+        .content {
+            height: 100%;
+        }
+        input[name=title]{
+            width: 365px;
+            margin-bottom: 5px;
+        }
+        input[type=submit]{
+            margin-left: 130px;
+        }
+        
+        
+        /*************************테이블*****************/
+        table{
+            width: 100%;
+        }
+        thead{
+            height: 35px;
+        }
+        th{
+            background-color: rgb(255, 160, 130);
+            color: white;
+        }
+        td {
+            background-color: beige;
+        }
+        td[name=number]{
+            width: 40px;
+        }
+        td[name=clicklink]{
+            width: 70px;
+        }
+        td[name=ID]{
+            width: 110px;
+        }
+        td[name=uploadDate]{
+            width: 110px;
+        }
+        td[name=view]{
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>포트폴리오 문제</h1>
+    <hr>
+    <form action="insert.no" method="post">
+        <fieldset>
+            <legend>공지사항 작성하기</legend>
+            <div class="title">
+                제목 
+                <br><br><br><br><br>
+                내용
+                <br><br><br><br>
+                첨부파일
+            </div>
+            <div class="inputarea">
+                <input type="text" 
+                    name="title" 
+                    id="title" 
+                    placeholder="제목을 입력하시오." 
+                    required>
+
+                    <br>
+
+                    <textarea name="content" 
+                    placeholder="내용을 입력하시오." 
+                    cols="50"
+                    rows="10"
+                    style="resize:none;"
+                    required></textarea>
+
+                    <br>
+
+                    <input type="file" name="uploadFile" id="uploadFile">
+                    <br><br>
+                    <input type="submit" value="작성하기">
+            </div>
+        </fieldset>
+        
+    </form>
+
+    <br><hr><br>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th colspan="2">제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+        <tr>
+            <td name="number">9</td>
+            <td name="list">공지사항 제목 9</td>
+            <td name="clicklink"><button>바로가기</button></td>
+            <td name="ID">user01</td>
+            <td name="uploadDate">2021-03-29</td>
+            <td name="view">34</td>
+        </tr>
+        <tr>
+            <td name="number">6</td>
+            <td name="list">공지사항 제목 6</td>
+            <td name="clicklink"><button>바로가기</button></td>
+            <td name="ID">answ445</td>
+            <td name="uploadDate">2021-03-12</td>
+            <td name="view">67</td>
+        </tr>
+        <tr>
+            <td name="number">3</td>
+            <td name="list">공지사항 제목 3</td>
+            <td name="clicklink"><button>바로가기</button></td>
+            <td name="ID">testg12</td>
+            <td name="uploadDate">2021-03-01</td>
+            <td name="view">98</td>
+        </tr>
+        <tr>
+            <td name="number">2</td>
+            <td name="list">공지사항 제목 2</td>
+            <td name="clicklink"><button>바로가기</button></td>
+            <td name="ID">palwe3</td>
+            <td name="uploadDate">2021-01-02</td>
+            <td name="view">85</td>
+        </tr>
+        <tr>
+            <td name="number">1</td>
+            <td name="list">공지사항 제목 1</td>
+            <td name="clicklink"><button>바로가기</button></td>
+            <td name="ID">xml23</td>
+            <td name="uploadDate">2020-12-24</td>
+            <td name="view">124</td>
+        </tr>
+        <tr>
+            <th colspan="4">전체 공지사항갯수</th>
+            <th colspan="2">5개</th>
+        </tr>
+    </table>
+    
+</body>
+</html>
