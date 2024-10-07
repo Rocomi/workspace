@@ -25,6 +25,7 @@ import com.kh.spring.common.template.Pagination;
 @Controller
 @RequestMapping("/board")
 public class BoardController {
+	
 	private final BoardService bService;
 	
 	public BoardController(BoardService bService) {

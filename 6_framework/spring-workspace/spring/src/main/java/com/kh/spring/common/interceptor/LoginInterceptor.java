@@ -34,8 +34,8 @@ public class LoginInterceptor implements HandlerInterceptor {
 		} else {
 			session.setAttribute("alertMsg", "로그인 후 이용가능합니다.");		// 메시지 출력을 위해 데이터 저장
 			response.sendRedirect(request.getContextPath());			// 메인 페이지로 url 재요청
-			
-			return false;			
+
+			return false;
 		}
 	}
 	
