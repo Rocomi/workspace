@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kh.khEmail.service.MailService;
@@ -94,6 +95,25 @@ public class MailController {
 			return "failed";
 		}
 	}
+	
+	@PostMapping("/test")
+	// public String checkCode(String code, String email) {
+	public String testCode(@RequestParam String id) throws Exception {
+
+
+		log.info("* id : {}", id);
+		
+		boolean result = id == null;
+		
+		if(result) {
+			return "success";
+		} else {
+			return "failed";
+		}
+	}
+	
+	
+	
 }
 
 @Data

@@ -166,7 +166,7 @@ public class APIController {
 		String url = "https://apis.data.go.kr/1741000/TsunamiShelter4/getTsunamiShelter4List"
 					+ "?ServiceKey="+ SERVICE_KEY
 					+ "&pageNo=" + pageNo 
-					+ "&numOfRows=" + rows
+					+ "&numOfRows=" + "2"
 					+ "&type=json";
 		
 		// 2. 데이터 요청

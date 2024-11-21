@@ -1,81 +1,112 @@
+Response from API:
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopNow - Online Shopping</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Sample Web Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        footer {
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .section {
+            padding: 20px;
+            margin: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        img {
+            width: 150px;
+            height: auto;
+        }
+        .logo {
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>ShopNow</h1>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#cart">Cart</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h2>Welcome to ShopNow</h2>
-            <p>Find the best deals online</p>
-            <button onclick="scrollToProducts()">Shop Now</button>
-        </div>
-    </section>
+<header>
+    <div class="logo">(insert logo here)</div>
+    <h1>Welcome to Our Website</h1>
+</header>
 
-    <section id="products">
-        <h2>Our Products</h2>
-        <div class="product-list">
-            <div class="product-item">
-                <img src="testimg/test.jpg" alt="Product 1">
-                <h3>Product 1</h3>
-                <p>$29.99</p>
-                <button onclick="addToCart('Product 1', 29.99)">Add to Cart</button>
-            </div>
-            <div class="product-item">
-                <img src="testimg/test.jpg" alt="Product 2">
-                <h3>Product 2</h3>
-                <p>$49.99</p>
-                <button onclick="addToCart('Product 2', 49.99)">Add to Cart</button>
-            </div>
-            <div class="product-item">
-                <img src="testimg/test.jpg" alt="Product 3">
-                <h3>Product 3</h3>
-                <p>$19.99</p>
-                <button onclick="addToCart('Product 3', 19.99)">Add to Cart</button>
-            </div>
-        </div>
-    </section>
+<div class="section">
+    <h2>About Us</h2>
+    <img src="./testImg/main.jpg" alt="About Us Image">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget velit ut nisl malesuada consequat. 
+    Etiam interdum gravida nisl, eget vehicula massa facilisis ac. Sed faucibus libero ac rhoncus gravida. 
+    Morbi dapibus, lacus quis egestas sodales, sapien erat gravida nisl, id vulputate sem ante sed eros.</p>
+    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+    Fusce dapibus urna ut orci porttitor, vitae tempus lacus sodales. Aenean vehicula arcu a gravida hendrerit. 
+    Vivamus purus ligula, varius et quam vel, venenatis hendrerit justo.</p>
+</div>
 
-    <section id="cart">
-        <h2>Your Cart</h2>
-        <div id="cart-items">
-            <p>No items in the cart yet.</p>
-        </div>
-        <div id="total"></div>
-    </section>
+<div class="section">
+    <h2>Our Services</h2>
+    <img src="./testImg/test.jpg" alt="Services Image">
+    <p>Nulla facilisi. Sed varius, tortor sed imperdiet ullamcorper, diam libero gravida dolor, in pellentesque lacus 
+    magna eget enim. Aenean ullamcorper condimentum erat. Cras ac ipsum eu est egestas interdum. 
+    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus at viverra 
+    lacus.</p>
+    <p>Sed in turpis varius, venenatis sapien vel, commodo felis. Quisque sit amet vestibulum odio, lacinia 
+    scelerisque justo. Etiam imperdiet, mauris ac faucibus dictum, odio libero egestas justo,non scelerisque metus 
+    quam non leo.</p>
+</div>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+<div class="section">
+    <h2>Contact Us</h2>
+    <img src="./testImg/test1.jpg" alt="Contact Us Image">
+    <p>For any inquiries or feedback, feel free to contact us at our email address. We are here to help you 
+    with any questions you may have. Please allow 1-2 business days for a reply. You can also reach us 
+    through our social media channels for more instant communication.</p>
+    <p>We value your feedback and strive to improve our services. Your input is crucial in helping us 
+    understand how we can better serve you. We appreciate your time and effort in reaching out to us.</p>
+</div>
 
-    <footer>
-        <p>&copy; 2024 ShopNow. All Rights Reserved.</p>
-    </footer>
+<footer>
+    <p>&copy; 2023 Our Website. All rights reserved.</p>
+</footer>
 
-    <script src="script.js"></script>
+<script>
+    window.onload = function() {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach((section, index) => {
+            section.style.animationDelay = `${index * 0.2}s`;
+        });
+    };
+</script>
+
 </body>
 </html>
+```

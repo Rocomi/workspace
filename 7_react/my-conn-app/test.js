@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded", function() { const sections = document.querySelectorAll('section'); sections.forEach((section) => { section.addEventListener('mouseenter', () => { section.style.backgroundColor = '#e1f5fe'; }); section.addEventListener('mouseleave', () => { section.style.backgroundColor = 'white'; }); }); });

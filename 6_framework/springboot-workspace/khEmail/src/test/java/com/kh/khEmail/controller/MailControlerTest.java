@@ -3,6 +3,7 @@ package com.kh.khEmail.controller;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -44,5 +45,16 @@ public class MailControlerTest {
 			)
 	.andExpect(status().isOk());
 	}
+	
+	
+	 @Test
+	    @DisplayName("사용자 정보 삭제 테스트")
+	    void deleteUser() throws Exception {
+	        mockMvc.perform(
+	                post("/test")
+	                        .param("id","hong00")
+	        )
+	                .andExpect(status().isOk());
+	    }
 	
 }
